@@ -18,7 +18,7 @@ def load_tag_lookup(filename: str) -> Dict[Tuple[int, str], str]:
 
     The CSV file is expected to have three columns:
                         'dstport', 'protocol', and 'tag'.
-    The function reads the CSV file, skips the header, 
+    The function reads the CSV file, skips the header,
     and maps each (dstport, protocol) pair to the corresponding tag.
 
     Args:
@@ -32,11 +32,6 @@ def load_tag_lookup(filename: str) -> Dict[Tuple[int, str], str]:
     Raises:
         FileNotFoundError: If the specified file does not exist.
         Exception: If there is an error reading the file or
-        processing its contents.
-
-    Logs:
-        INFO: When the tag mappings are successfully loaded.
-        ERROR: If there is an issue loading the lookup file or
         processing its contents.
     """
     lookup = {}
@@ -92,7 +87,7 @@ def parse_flow_logs(
         protocol_map: dict) -> Tuple[Dict[str, int],
                                      Dict[Tuple[int, str], int]]:
     """
-    Parses the flow logs from the given file and generates counts for tags and 
+    Parses the flow logs from the given file and generates counts for tags and
     port/protocol combinations.
 
     The function reads the flow log file line by line, extracts
@@ -105,7 +100,7 @@ def parse_flow_logs(
         lookup (Dict[Tuple[int, str], str]):
             A dictionary mapping (dstport, protocol) tuples to tags.
 
-        protocol_map (dict): 
+        protocol_map (dict):
             A dictionary mapping protocol identifiers to protocol names.
 
     Returns:
