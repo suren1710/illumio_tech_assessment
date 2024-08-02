@@ -45,7 +45,7 @@ This project parses flow log data and maps each row to a tag based on a lookup t
    
    NOTE: you can replace your flow log data and lookup. It will generate output file with tag and combination counts.
    You dont need any dependencies to run the above command, it requires only active virtual environment. 
-   Dependencies are only for test, lint and type hit checks.
+   Dependencies are only for test, lint and type hint checks.
 
 
 ## Code coverage report
