@@ -1,0 +1,7 @@
+pytest
+mypy
+flake8
+coverage
+setuptools
+pytest-cov
+pytest-benchmark
