@@ -10,7 +10,7 @@ This project parses flow log data and maps each row to a tag based on a lookup t
 - As the log file has protocol identifier instead of the protocol name, I have added protocol map json file. protcol-identifier taken from https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
 
 ## Testing
-- Unit testing is done with code coverage of 79%
+- Unit testing is done with code coverage of 90%
 - Performance benchmark test completed.
 - Tested with flowlog_data.txt size 10 MB and Lookup table with 10000 mapping entries.
 

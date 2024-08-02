@@ -39,6 +39,16 @@ def test_parse_flow_logs_file_not_found():
     assert excinfo.value.code == 1
 
 
+def test_parse_flow_logs_invalid():
+    lookup = load_tag_lookup('tests/resources/test_tag_lookup.csv')
+    protocol_map = load_protocol_map('tests/resources/test_protocol_map.json')
+    with pytest.raises(SystemExit) as excinfo:
+        parse_flow_logs('tests/resources/invalid_file.png',
+                        lookup,
+                        protocol_map)
+    assert excinfo.value.code == 1
+
+
 def test_main():
     main('tests/resources/test_flowlog_data.txt',
          'tests/resources/test_tag_lookup.csv',
@@ -96,6 +106,18 @@ def test_parse_flow_logs_invalid_lines():
 def test_load_tag_lookup_file_not_found():
     with pytest.raises(SystemExit) as excinfo:
         load_tag_lookup('nonexistent_file.csv')
+    assert excinfo.value.code == 1
+
+
+def test_load_tag_lookup_file_invalid():
+    with pytest.raises(SystemExit) as excinfo:
+        load_tag_lookup('tests/resources/invalid_file.png')
+    assert excinfo.value.code == 1
+
+
+def test_generate_output_invalid_file():
+    with pytest.raises(SystemExit) as excinfo:
+        generate_output(None, None)
     assert excinfo.value.code == 1
 
 
