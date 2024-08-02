@@ -9,6 +9,12 @@ This project parses flow log data and maps each row to a tag based on a lookup t
 - Assuming destination ports are found in column 7 and protocol in column 8 in the input flow log file.
 - As the log file has protocol identifier instead of the protocol name, I have added protocol map json file. protcol-identifier taken from https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
 
+## Testing
+- Unit testing is done with code coverage of 79%
+- Performance benchmark test completed.
+- Tested with flowlog_data.txt size 10 MB and Lookup table with 10000 mapping entries.
+
+
 ## How to Run
 
 1. Creating\Setting virtual environment:
