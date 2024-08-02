@@ -4,8 +4,8 @@ This project parses flow log data and maps each row to a tag based on a lookup t
 
 ## Assumptions
 
-- The input flow log file is generated using log format provided Accepted and rejected traffic. Reference https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-records-examples.html#flow-log-example-traffic-path
-- Lookup table file generated using format provided by the question.
+- The input flow log file is generated using Flow log record examples provided by aws "Accepted and rejected traffic" . Reference link  https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-records-examples.html#flow-log-example-traffic-path
+- Lookup table file generated using format provided by the assesment question question.
 - Assuming destination ports are found in column 7 and protocol in column 8 in the input flow log file.
 - As the log file has protocol identifier instead of the protocol name, I have added protocol map json file. protcol-identifier taken from https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
 
