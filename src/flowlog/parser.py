@@ -73,9 +73,6 @@ def load_protocol_map(filename):
         Exception: If there is an error reading the file or
         processing its contents.
 
-    Example:
-        >>> load_protocol_map('protocol_map.json')
-        {'6': 'tcp', '17': 'udp'}
     """
     with open(filename, 'r') as f:
         return json.load(f)
@@ -112,13 +109,6 @@ def parse_flow_logs(
         FileNotFoundError: If the specified file does not exist.
         Exception: If there is an error reading the file or
         processing its contents.
-
-    Example:
-        >>> lookup = {(443, 'tcp'): 'sv_P1', (68, 'udp'): 'sv_P2'}
-        >>> protocol_map = {'6': 'tcp', '17': 'udp'}
-        >>> parse_flow_logs('flowlog_data.txt', lookup, protocol_map)
-        ({'sv_P1': 10, 'sv_P2': 5, 'Untagged': 3},
-         {(443, 'tcp'): 10, (68, 'udp'): 5, (80, 'tcp'): 3})
     """
     tag_counts: DefaultDict[str, int] = defaultdict(int)
     combination_counts: DefaultDict[Tuple[int, str], int] = defaultdict(int)
@@ -168,14 +158,6 @@ def generate_output(tag_counts: Dict[str, int],
 
     Raises:
         Exception: If there is an error writing to the output file.
-
-    Example:
-        >>> tag_counts = {'sv_P1': 10, 'sv_P2': 5, 'Untagged': 3}
-        >>> combination_counts = {(443, 'tcp'): 10, (68, 'udp'): 5,
-             (80, 'tcp'): 3}
-        >>> generate_output(tag_counts, combination_counts)
-        # This will create an output.txt file with the specified tag
-        # and combination counts.
     """
     try:
         with open('output.txt', 'w') as file:
