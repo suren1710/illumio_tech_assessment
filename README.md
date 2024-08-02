@@ -42,16 +42,16 @@ This project parses flow log data and maps each row to a tag based on a lookup t
    ```sh
    make perf
 
-   Current benchmark:
-   benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+Current benchmark:
+benchmark: 4.0.0 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
 
 6. To run the parser:
    ```sh
    PYTHONPATH=./src python -m flowlog.parser flowlog_data.txt tag_lookup.csv
    
-   NOTE: you can replace your flow log data and lookup. It will generate output file with tag and combination counts.
-   You dont need to install any dependencies to run the above command. This project can be run with just active virtual environment. 
-   Dependencies are only for test, lint and type hint checks.
+NOTE: you can replace your flow log data and lookup. It will generate output file with tag and combination counts.
+You dont need to install any dependencies to run the above command. This project can be run with just active virtual environment. 
+Dependencies are only for test, lint and type hint checks.
 
 
 ## Code coverage report
